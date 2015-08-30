@@ -1,0 +1,328 @@
+*Numbers
+=3 + 2
+=3 - 2
+=3 * 2
+=3 / 2
+=3 ^ 2
+=3 ** 2.5
+
+quot 3 2
+rem 3 2
+div 3 2
+mod 3 2
+
+max 3 4
+min 3 4
+abs (-3)
+
+odd 3
+even 3
+gcd 4 6
+lcm 4 6
+
+floor 3.6
+round 3.6
+ceiling 3.6
+
+sum [1..5]
+product [1..5]
+
+maximum [1,3,2]
+minimum [1,3,2]
+
+pi
+sqrt 2
+sin 0.4
+cos 0.4
+m
+
+*Booleans
+=3 > 2
+=3 >= 2
+=3 < 2
+=3 <= 2
+=3 == 2
+=3 /= 2
+
+=True && False
+=True || False
+not True
+
+and [False, False, True]
+or [False, False, True]
+
+*Constructing Lists
+='h' : "ello"
+="he" ++ "llo"
+
+concat ["he", "ll", "o"]
+concatMap ?????
+
+intersperse ',' "abc"
+intercalate "--" ["one", "two"]
+
+*Querying Lists
+null "abc"
+length "abc"
+
+elem e "hello"
+find odd [2,4,5,6]
+m
+--lookup 4 [(3, "hey"), (4, "ho")]
+
+isPrefixOf "he" "hello"
+m
+
+FindIndex odd [2,3,5]
+FindIndices odd [2,3,5]
+
+t
+*Extracting from Lists
+="hello" !! 4
+
+head "abc"
+tail "abc"
+init "abc"
+last "abc"
+
+take 2 "hello"
+drop 2 "hello"
+
+takeWhile odd [1,3,2]
+dropWhile odd [1,3,2]
+
+stripPrefix "he" "hello"
+
+*Splitting Lists
+splitAt 2 "hello"
+span odd [1,3,4]
+break even [1,3,4]
+
+partition odd [1,2,3,4]
+
+*Infinite lists
+iterate (+1) 0
+repeat 'a'
+replicate 3 'a'
+cycle "hello"
+
+*Lists as sets
+nub "mississippi"
+
+delete 'e' "hello"
+
+="ab" \\ "ac"
+union "ab" "ac"
+m
+
+*Sorting
+sort [3,4,2]
+m
+insert 3 [1,2,4]
+m
+compare 3 4
+
+*Foo Lists
+zip [1..] "hello"
+zipWith (+) [1,2,3] [4,5,6]
+m
+
+unzip [(4,'a'),(5,'z')]
+m
+
+reverse "hi"
+transpose ["abc", "123"]
+
+subsequences "abc"
+permutations "abc"
+
+group "hello"
+
+inits "abc"
+tails "abc"
+
+t
+*Strings
+lines "one\ntwo\n"
+unlines ["one", "two"]
+
+words "one two"
+unwords ["one", "two"]
+
+show 3
+read "3"
+*Characters
+toUpper 'a'
+toLower 'A'
+
+digitToInt '5'
+intToDigit 5
+
+ord 'A'
+chr 65
+
+isNumber '4'
+isLetter 'a'
+m
+
+*Higher order
+map sqrt [1..5]
+filter odd [1..5]
+
+all odd [2,3,4]
+any odd [2,3,4]
+
+=sqrt . sqrt
+=sqrt $ 4
+flip take
+
+foldr (+) 0 [1..5]
+foldl' (+) 0 [1..5]
+m
+
+scanr (+) 0 [1..5]
+scanl' (+) 0 [1..5]
+m
+
+*I/O
+main
+interact $ map toUpper
+
+putChar 'a'
+putStr "hi"
+putStrLn "hi"
+print 4
+
+getchar
+getLine
+getContents
+
+readFile "a.txt"
+writeFile "a.txt"
+appendFile "a.txt"
+*Misc
+fst (3,"hi")
+snd (3,"hi")
+id 3
+const 3 "hi"
+
+*Map operators
+=m ! k
+=m \\ m
+
+*Map queries
+null m
+size m
+member k m
+
+findWithDefault v k m
+lookup k m
+lookupLT k m
+m
+t
+*Map construct/insert/delete/update
+empty
+singleton k v
+
+insert k v m
+insertWith f k v m
+--insertWithKey f k v m
+--insertLookupWithKey f k v m
+m
+
+delete k m
+adjust f k m
+--adjustWithKey f k m
+m
+update f k m
+--updateWithKey f k m
+--updateLookupWithKey f k m
+m
+alter f k m
+
+*Map combine
+union m m
+--unionWith f m m
+--unionWithKey f m m
+m
+unions ms
+--unionsWith f ms
+--unionsWithKey f ms
+m
+
+difference m m
+--differenceWith f m m
+m
+intersection m m
+--intersectionWith f m m
+m
+
+mergeWithKey f f f m m
+
+*Map traversal
+map f m
+mapWithKey f m
+traverseWithKey f m
+
+mapAccum f v m
+m
+mapKeys f m
+m
+foldr f b m
+m
+
+*Map conversion
+elems m
+keys m
+assocs m
+keysSet m
+fromSet f s
+
+toList m
+fromList lis
+fromListWith f lis
+m
+
+toAscList m
+toDescList m
+m
+
+*Map filters
+filter f m
+m
+partition f m
+m
+
+mapMaybe f m
+m
+mapEither f m
+m
+
+split k m
+splitLookup k m
+splitRoot m
+
+*Map submaps
+isSubmapOf m m
+m
+isProperSubmapOf m m
+
+*Map Indexed
+lookupIndex k m
+findIndex k m
+elemAt i m
+
+updateAt f i m
+deleteAt i m
+
+*Map min/max
+findMin m
+m
+deleteMin m
+m
+
+updateMin f m
+m
+minView m
+m
+
