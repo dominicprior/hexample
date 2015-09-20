@@ -197,8 +197,9 @@ getLine
 getContents
 
 readFile "a.txt"
-writeFile "a.txt"
-appendFile "a.txt"
+
+writeFile "a.txt" "hello"
+appendFile "a.txt" "hello"
 *Misc
 fst (3,"hi")
 snd (3,"hi")
