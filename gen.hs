@@ -2,7 +2,7 @@
 -- representation into an html file.
 
 -- Usage:
--- gen < using-the-standard-functions.txt > using-the-standard-functions.html
+-- gen < standard.txt > standard.html
 
 main :: IO ()
 main = interact go
@@ -15,7 +15,7 @@ body = unlines . map oneLine . lines
 
 oneLine :: String -> String
 oneLine "" = "<br>\n"
-oneLine "m" = "<u>...</u>\n"
+oneLine "m" = "...\n"
 oneLine "t" = "</td><td>\n"
 oneLine ('-' : '-' : _) = ""
 oneLine ('*' : str) = "\n<h1>" ++ str ++ "</h1>\n"
